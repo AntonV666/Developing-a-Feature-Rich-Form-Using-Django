@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+</head>
+<body>
+<h1>Профиль пользователя</h1>
+<h2>Ваши сообщения:</h2>
+<ul>
+    {% for message in messages %}
+        <li>Email: {{ message.email }} - Сообщение: {{ message.text }}</li>
+    {% empty %}
+        <li>У Вас нет отправленных сообщений.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'start_page' %}">Назад</a>
+</body>
+</html>
